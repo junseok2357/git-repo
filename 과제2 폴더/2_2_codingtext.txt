@@ -1,0 +1,34 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(string my_string, string is_prefix) {
+	if (is_prefix.length() > my_string.length()) {
+		return 0;
+	}
+	for (size_t i = 0; i < is_prefix.length(); i++) {
+		if (my_string[i] != is_prefix[i]) {
+			return 0;
+		}
+	}
+	return 1;
+}
+
+int main() {
+	string my_string = "banana";
+	string is_prefix1 = "ban";
+	printf("예제 1번에서 %s가 %s의 접두사이기 때문에 1을 return 합니다.\n",
+		is_prefix1.c_str(), my_string.c_str(), solution(my_string, is_prefix1));
+	string is_prefix2 = "nan";
+	printf("예제 2번에서 %s가 %s의 접두사이기 때문에 0을 return 합니다.\n",
+		is_prefix2.c_str(), my_string.c_str(), solution(my_string, is_prefix2));
+
+	string is_prefix3 = "abcd";
+	printf("예제 3번에서 %s가 %s의 접두사이기 때문에 %d을 return 합니다.\n",
+		is_prefix3.c_str(), my_string.c_str(), solution(my_string, is_prefix3));
+	string is_prefix4 = "bananan";
+	printf("예제 3번에서 %s가 %s의 접두사이기 때문에 %d을 return 합니다.\n",
+		is_prefix4.c_str(), my_string.c_str(), solution(my_string, is_prefix4));
+	return 0;
+}
