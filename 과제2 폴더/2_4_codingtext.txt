@@ -1,0 +1,35 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int a, int b) {
+	string ab = to_string(a) + to_string(b);
+	string ba = to_string(b) + to_string(a);
+
+	int ab_result = stoi(ab);
+	int ba_result = stoi(ba);
+
+	return max(ab_result, ba_result);
+}
+
+int main() {
+	int a = 9;
+	int b = 91;
+
+	int ab_result = solution(a, b);
+	int ba_result = solution(b, a);
+	int result = max(ab_result, ba_result);
+
+	printf("%d + %d = %d 이고, %d + %d = %d 입니다. 둘 중 더 큰 값은 %d 이므로 %d을 return 합니다.\n",
+		a, b, ab_result, b, a, ba_result, result, result);
+	
+	a = 89, b = 8;
+	ab_result = solution(a, b);
+	ba_result = solution(b, a);
+	result = max(ab_result, ba_result);
+
+	printf("%d + %d = %d 이고, %d + %d = %d 입니다. 둘 중 더 큰 값은 %d 이므로 %d을 return 합니다.\n",
+		a, b, ab_result, b, a, ba_result, result, result);
+	return 0;
+}
