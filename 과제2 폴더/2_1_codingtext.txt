@@ -1,0 +1,24 @@
+#include <string>
+#include <vector>
+
+using namespace std;
+
+int solution(int n, int k) {
+    int lambP = 12000;
+    int drinkP = 2000;
+
+    int freeDrink = n / 10;
+    int total = (n * lambP) + ((k - freeDrink) * drinkP);
+    return total;
+}
+
+int main() {
+    int n1 = 10;
+    int k1 = 3;
+
+    printf("%d인분을 시켜 서비스로 음료수를 하나 받아 총 %d * 12000 + %d * 2000 -1 * 2000 = %d원 입니다.",n1,n1,k1,solution(n1,k1));
+
+    int n2 = 64;
+    int k2 = 6;
+    printf("%d인분을 시켜 서비스로 음료수를 하나 받아 총 %d * 12000 + %d * 2000 -1 * 2000 = %d원 입니다.", n2, n2, k2, solution(n2, k2));
+}
